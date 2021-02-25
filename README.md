@@ -1,7 +1,7 @@
-# proyecto capacitacion
+"# pim_bit_news" 
 
-Project iberoamericana </br>
-![imagen](https://user-images.githubusercontent.com/40553244/106688246-ba9b2c80-659b-11eb-858b-f5586da9526c.png)
+Project Iberoamericana </br>
+![imagen](https://iberoamericana.mrooms.net/pluginfile.php/1/theme_snap/logo/1614111199/Ibero_600px-AV.png)
 
 ## Getting Started
 
@@ -15,5 +15,4 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
-"# pim_bit_news" 
-"# pim_bit_news" 
+
