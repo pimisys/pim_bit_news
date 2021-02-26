@@ -1,7 +1,7 @@
-import 'package:app1/models/news.dart';
-import 'package:app1/util/constants_bit_news.dart';
-import 'package:app1/util/constants_html.dart';
-import 'package:app1/util/dates.dart';
+import 'package:pim_bit_news/models/news.dart';
+import 'package:pim_bit_news/util/constants_bit_news.dart';
+import 'package:pim_bit_news/util/constants_html.dart';
+import 'package:pim_bit_news/util/dates.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 

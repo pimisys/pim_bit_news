@@ -1,12 +1,15 @@
-import 'package:app1/util/constants_bit_news.dart';
-import 'package:app1/view/login_page.dart';
-import 'package:app1/view/news_page.dart';
 import 'package:flutter/material.dart';
+import 'package:pim_bit_news/util/constants_bit_news.dart';
+import 'package:pim_bit_news/util/firebaseController.dart' as firebaseAuth;
+import 'package:pim_bit_news/view/login_page.dart';
+import 'package:pim_bit_news/view/news_page.dart';
+import 'package:pim_bit_news/view/singUp.dart';
 
 import 'file:///D:/Users/PIMIENTO/AndroidStudioProjects/pim_bit_news/lib/view/news_card_open.dart';
 
 void main() {
   runApp(MyApp());
+  firebaseAuth.Initializing();
 }
 
 // clase principal
@@ -16,26 +19,48 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  String _currentOption = '';
+
   @override
   Widget build(BuildContext context) {
+    var page;
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: loginOption,
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case loginOption:
-            return MaterialPageRoute(builder: (context) => new LoginPage());
+            page = MaterialPageRoute(builder: (context) => new LoginPage());
+            break;
           case newsOption:
-            return MaterialPageRoute(builder: (context) => new NewsPage());
+            page = MaterialPageRoute(builder: (context) => new NewsPage());
+            break;
           case newsOpenOption:
-            return MaterialPageRoute(
+            page = MaterialPageRoute(
               builder: (context) => new NewsCardOpen(news: settings.arguments),
             );
+            break;
           case singUpOption:
-            return null; // MaterialPageRoute(builder: (context) {new NewsCardOpen(news: news);
+            page = MaterialPageRoute(builder: (context) => new RegisterUser());
+            // MaterialPageRoute(builder: (context) {new NewsCardOpen(news: news);
+            break;
+          case '/':
+            if (_currentOption == '') {
+              page = null;
+            } else if (_currentOption != '/') {
+              Navigator.pushNamed(context, _currentOption);
+              return null;
+            } else {
+              Navigator.pushNamed(context, loginOption);
+              return null;
+            } //al iniciar?
+            break;
           default:
-            return null;
+            page = null;
         }
+        _currentOption = settings.name;
+        return page;
       },
     );
   }

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "910818180686",
+    "project_id": "pimisys-bit-news",
+    "storage_bucket": "pimisys-bit-news.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910818180686:android:a356940e5164df18678d1f",
+        "android_client_info": {
+          "package_name": "com.pimisys.pim_bit_news"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "910818180686-ahi1a5lhm8t514vih1pcv800o7lnt1pn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pimisys.pim_bit_news",
+            "certificate_hash": "18a9619905e76ecdc392f8a827605b69e06ba1d7"
+          }
+        },
+        {
+          "client_id": "910818180686-vcuqpoobsarsgsv8sfg9k0jfvm3lrha6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRpmKVTEJR6gFX3MJwagez1T1pdJ3oGvY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "910818180686-vcuqpoobsarsgsv8sfg9k0jfvm3lrha6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

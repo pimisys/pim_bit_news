@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-import 'constants_bit_news.dart';
 
 class PimStyles {
   // static const primaryTextStyle = TextStyle(
@@ -11,7 +8,7 @@ class PimStyles {
   // );
 
   static const drawerOptionStyle = TextStyle(
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: FontWeight.bold,
     color: Colors.black87,
   );
@@ -26,25 +23,4 @@ class PimStyles {
     fontSize: 18,
     fontWeight: FontWeight.bold,
   );
-}
-
-class PimLabel extends StatelessWidget {
-  final String caption;
-  final double fontSize;
-
-  const PimLabel(
-      {Key key, @required this.caption, this.fontSize = fontSizeLabel})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      "$caption",
-      style: GoogleFonts.signika(
-        color: Colors.black54,
-        fontWeight: FontWeight.bold,
-        fontSize: fontSize,
-      ),
-    );
-  }
 }

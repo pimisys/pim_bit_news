@@ -1,5 +1,5 @@
-import 'package:app1/models/news.dart';
-import 'package:app1/view/widgets/news_card.dart';
+import 'package:pim_bit_news/models/news.dart';
+import 'package:pim_bit_news/view/widgets/news_card.dart';
 import 'package:flutter/material.dart';
 
 class NewsCardFromSnapshot extends StatelessWidget {

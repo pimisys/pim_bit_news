@@ -1,7 +1,10 @@
-import 'package:app1/presenter/build_view.dart';
-import 'package:app1/util/constants_bit_news.dart';
-import 'package:app1/view/widgets/drawer_option.dart';
 import 'package:flutter/material.dart';
+import 'package:pim_bit_news/presenter/build_view.dart';
+import 'package:pim_bit_news/util/constants_bit_news.dart';
+import 'package:pim_bit_news/util/firebaseController.dart'
+    as firebaseController;
+import 'package:pim_bit_news/view/widgets/common_dialogs.dart';
+import 'package:pim_bit_news/view/widgets/drawer_option.dart';
 
 class NewsPage extends StatefulWidget {
   @override
@@ -78,7 +81,29 @@ class _NewsPageState extends State<NewsPage> {
                         });
                       },
                     ))
-                .toList()
+                .toList(),
+            Divider(),
+            ListTile(
+              title: Text('Settings',
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+            ),
+            Divider(),
+            ListTile(
+              onTap: () {
+                showDialog(
+                  context: context,
+                  //barrierDismissible: false,
+                  builder: (_) => PimAlertDialogBoxYN(
+                      //title: 'Confirmation',
+                      question: 'Are you sure to do sing out?',
+                      onPressedY: () {
+                        firebaseController.signOut(context, loginOption);
+                      }),
+                );
+              },
+              title: Text('Sign Out',
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+            ),
           ],
         ),
       ),

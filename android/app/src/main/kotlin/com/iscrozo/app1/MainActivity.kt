@@ -1,4 +1,4 @@
-package com.iscrozo.app1
+package com.pimisys.pim_bit_news
 
 import io.flutter.embedding.android.FlutterActivity
 

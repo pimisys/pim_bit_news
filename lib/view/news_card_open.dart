@@ -1,6 +1,6 @@
-import 'package:app1/models/news.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pim_bit_news/models/news.dart';
 
 class NewsCardOpen extends StatelessWidget {
   final News news;
@@ -68,7 +68,9 @@ class NewsCardOpen extends StatelessWidget {
                   ),
                   Text(
                     news.content ?? 'Content not found',
-                    maxLines: 100,
+                    //textHeightBehavior: TextHeightBehavior() ,
+                    //maxLines: 100,
+                    overflow: TextOverflow.visible,
                     style: GoogleFonts.signika(
                       fontSize: 16,
                       color: Colors.black87,

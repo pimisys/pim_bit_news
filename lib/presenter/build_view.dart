@@ -1,9 +1,9 @@
-import 'package:app1/data/apiService.dart';
-import 'package:app1/presenter/news_card_from_snapshot.dart';
-import 'package:app1/util/styles.dart';
-import 'package:app1/view/widgets/dialog_button.dart';
-//import 'package:app1/presenter/news_card.dart';
+//import 'package:pim_bit_news/presenter/news_card.dart';
 import 'package:flutter/material.dart';
+import 'package:pim_bit_news/data/apiService.dart';
+import 'package:pim_bit_news/presenter/news_card_from_snapshot.dart';
+import 'package:pim_bit_news/view/widgets/app_textbox.dart';
+import 'package:pim_bit_news/view/widgets/common_dialogs.dart';
 
 class BuildView extends StatelessWidget {
   final String viewName;
@@ -32,13 +32,14 @@ class BuildView extends StatelessWidget {
                             onTapFav: (news) {
                               //print(news.title);
                               showDialog(
-                                  context: context,
-                                  //barrierDismissible: false,
-                                  builder: (_) => PimAlertDialogBoxYN(
-                                      //title: 'Confirmation',
-                                      question:
-                                          'Are you sure to dd this news to favorite list?',
-                                      onPressedY: () {}));
+                                context: context,
+                                //barrierDismissible: false,
+                                builder: (_) => PimAlertDialogBoxYN(
+                                    //title: 'Confirmation',
+                                    question:
+                                        'Are you sure to dd this news to favorite list?',
+                                    onPressedY: () {}),
+                              );
                             },
                           );
                         },

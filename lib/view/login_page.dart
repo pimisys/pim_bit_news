@@ -1,9 +1,10 @@
-import 'package:app1/util/colors.dart';
-import 'package:app1/util/constants_bit_news.dart';
-import 'package:app1/util/styles.dart';
-import 'package:app1/view/widgets/app_button.dart';
-import 'package:app1/view/widgets/app_textbox.dart';
 import 'package:flutter/material.dart';
+import 'package:pim_bit_news/util/colors.dart';
+import 'package:pim_bit_news/util/constants_bit_news.dart';
+import 'package:pim_bit_news/util/firebaseController.dart' as firebaseAuth;
+import 'package:pim_bit_news/view/widgets/app_button.dart';
+import 'package:pim_bit_news/view/widgets/app_textbox.dart';
+import 'package:pim_bit_news/view/widgets/common_dialogs.dart' as commonDialogs;
 
 class LoginPage extends StatefulWidget {
   @override
@@ -15,6 +16,10 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     var _Height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
+    TextEditingController _textEditingControllerEmail =
+        new TextEditingController();
+    TextEditingController _textEditingControllerPassword =
+        new TextEditingController();
 
     return Scaffold(
         resizeToAvoidBottomInset: false,
@@ -75,12 +80,12 @@ class _LoginPageState extends State<LoginPage> {
                           SizedBox(
                             height: _Height * 0.06,
                           ),
-                          Align(
-                            alignment: Alignment.center,
+                          Center(
                             child: PimTextBox(
-                              hintText: 'Username',
+                              controller: _textEditingControllerEmail,
+                              hintText: 'Email',
                               icon: Icon(
-                                Icons.person,
+                                Icons.mail,
                                 color: Colors.grey,
                               ),
                             ),
@@ -88,9 +93,9 @@ class _LoginPageState extends State<LoginPage> {
                           SizedBox(
                             height: _Height * 0.02,
                           ),
-                          Align(
-                            alignment: Alignment.center,
+                          Center(
                             child: PimTextBox(
+                              controller: _textEditingControllerPassword,
                               hintText: 'Password',
                               icon: Icon(
                                 Icons.lock,
@@ -108,13 +113,26 @@ class _LoginPageState extends State<LoginPage> {
                           SizedBox(
                             height: _Height * 0.03,
                           ),
-                          Align(
-                            alignment: Alignment.center,
+                          Center(
                             child: PimButton(
-                              text: 'LOGIN ',
+                              text: 'LOGIN',
                               onPressed: () {
-                                Navigator.pushReplacementNamed(
-                                    context, newsOption);
+                                if (_textEditingControllerEmail.text.isEmpty ||
+                                    _textEditingControllerPassword
+                                        .text.isEmpty) {
+                                  commonDialogs.showMaterialDialog(
+                                      context: context,
+                                      message: 'Digite los datos!!!');
+                                } else {
+                                  firebaseAuth.singIn(
+                                    email: _textEditingControllerEmail.text,
+                                    password:
+                                        _textEditingControllerPassword.text,
+                                  );
+                                  Navigator.pop(context);
+                                  firebaseAuth.stateFirebase(
+                                      context, newsOption);
+                                }
                               },
                             ),
                           ),
@@ -135,6 +153,7 @@ class _LoginPageState extends State<LoginPage> {
                   PimButton(
                     text: 'SING UP',
                     onPressed: () {
+                      Navigator.pop(context);
                       Navigator.pushReplacementNamed(context, singUpOption);
                     },
                   ),

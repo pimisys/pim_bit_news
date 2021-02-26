@@ -1,4 +1,4 @@
-import 'package:app1/util/styles.dart';
+import 'package:pim_bit_news/util/styles.dart';
 import 'package:flutter/material.dart';
 
 //Define una opcion del Drawer

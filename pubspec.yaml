@@ -1,4 +1,4 @@
-name: app1
+name: pim_bit_news
 description: Project iberoamericana
 
 # The following line prevents the package from being accidentally published to
@@ -22,6 +22,14 @@ environment:
 
 dependencies:
   google_fonts: ^1.1.2
+  sqflite:
+  path:
+  http: ^0.12.2
+  ionicons: any
+  liquid_progress_indicator: ^0.3.2
+  shared_preferences: any
+  firebase_core: "0.7.0"
+  firebase_auth: "0.20.1"
   hexcolor: ^1.0.6
   dio: ^3.0.10 #para consumir servicios
   flutter:
